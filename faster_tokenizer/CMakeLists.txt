@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.10)
 
 project(tokenizers LANGUAGES CXX C VERSION 1.0)
 
+set (CMAKE_C_COMPILER "/opt/homebrew/bin/gcc")
+set (CMAKE_CXX_COMPILER "/opt/homebrew/bin/g++")
+
 option(WITH_TESTING     "Compile PaddleNLP faster_tokenizer with unit testing"        OFF)
 option(WITH_PYTHON      "Compile PaddleNLP faster_tokenizer with python interpreter"   ON)
 add_definitions(-DFASTERTOKENIZER_LIB)
@@ -205,3 +208,13 @@ add_custom_target(create_commit_id_file ALL
     COMMAND ${GIT_EXECUTABLE} log -1 --format=%H > ${CPP_PACKAGE_DIR}/commit.log
     DEPENDS copy_shared_library)
 endif(WITH_PYTHON)
+
+add_executable(demo demo.cpp)
+
+target_link_libraries(
+        demo
+        PUBLIC
+        core_tokenizers
+)
+
+
