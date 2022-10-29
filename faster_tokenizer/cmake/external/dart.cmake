@@ -15,7 +15,7 @@
 include(ExternalProject)
 
 set(DART_PREFIX_DIR     ${THIRD_PARTY_PATH}/dart)
-SET(DART_REPOSITORY     ${GIT_URL}/s-yata/darts-clone.git)
+SET(DART_REPOSITORY     git@github.com:s-yata/darts-clone.git)
 SET(DART_TAG            master)
 
 set(DART_INCLUDE_DIR ${THIRD_PARTY_PATH}/dart/src/extern_dart/include)

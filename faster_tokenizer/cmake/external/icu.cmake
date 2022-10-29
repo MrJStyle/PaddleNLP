@@ -16,7 +16,7 @@ include(ExternalProject)
 include (ByproductsICU)
 SET(ICU_PREFIX_DIR    ${THIRD_PARTY_PATH}/icu)
 SET(ICU_INSTALL_DIR   ${THIRD_PARTY_PATH}/install/icu)
-SET(ICU_REPOSITORY    ${GIT_URL}/unicode-org/icu.git)
+SET(ICU_REPOSITORY    git@github.com:unicode-org/icu.git)
 SET(ICU_TAG           release-70-1)
 set(FIND_OR_BUILD_ICU_DIR ${CMAKE_CURRENT_LIST_DIR})
 
@@ -65,7 +65,7 @@ ExternalProject_Add(
         GIT_PROGRESS      1
         PREFIX            ${ICU_PREFIX_DIR}
         UPDATE_COMMAND    ""
-        CONFIGURE_COMMAND ${HOST_ENV_CMAKE} ../extern_icu/icu4c/source/runConfigureICU "MacOSX/GCC" --enable-static --disable-shared --enable-rpath
+        CONFIGURE_COMMAND ${HOST_ENV_CMAKE} ../extern_icu/icu4c/source/runConfigureICU "MacOSX" --enable-static --disable-shared --enable-rpath
         BUILD_COMMAND make -j4
         INSTALL_COMMAND make install prefix="" DESTDIR=${ICU_INSTALL_DIR} install
         BUILD_BYPRODUCTS ${ICU_LIBRARIES}

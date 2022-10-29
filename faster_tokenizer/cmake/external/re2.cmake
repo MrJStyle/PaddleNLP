@@ -16,7 +16,7 @@ INCLUDE(ExternalProject)
 SET(RE2_PREFIX_DIR    ${THIRD_PARTY_PATH}/re2)
 SET(RE2_INSTALL_DIR   ${THIRD_PARTY_PATH}/install/re2)
 # As we add extra features for utf8proc, we use the non-official repo
-SET(RE2_REPOSITORY    ${GIT_URL}/google/re2.git)
+SET(RE2_REPOSITORY    git@github.com:google/re2.git)
 SET(RE2_TAG           2022-04-01)
 
 IF(WIN32)
