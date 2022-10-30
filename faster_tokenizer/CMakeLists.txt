@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 
 project(tokenizers LANGUAGES CXX C VERSION 1.0)
 
-set (CMAKE_C_COMPILER "/opt/homebrew/bin/gcc")
-set (CMAKE_CXX_COMPILER "/opt/homebrew/bin/g++")
+#set (CMAKE_C_COMPILER "/usr/bin/clang")
+#set (CMAKE_CXX_COMPILER "/usr/bin/clang++")
 
 option(WITH_TESTING     "Compile PaddleNLP faster_tokenizer with unit testing"        OFF)
 option(WITH_PYTHON      "Compile PaddleNLP faster_tokenizer with python interpreter"   ON)

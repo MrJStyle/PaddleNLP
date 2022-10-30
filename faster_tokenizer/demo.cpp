@@ -18,17 +18,13 @@ limitations under the License. */
 #include <chrono>
 
 using namespace paddlenlp;
-//
-//int main() {
+
 using faster_tokenizer::core::EncodeInput;
 using namespace std::chrono;
-//using faster_tokenizer::core::EncodeInput;
 
 
  faster_tokenizer::tokenizers_impl::ErnieFasterTokenizer tokenizer("ernie_vocab.txt");
 //faster_tokenizer::tokenizers_impl::ErnieFasterTokenizer tokenizer("ap_vocab.txt");
-
-
 
 
 void tokenizeTest(std::string& text) {
@@ -67,29 +63,28 @@ void Timeit (std::function<void (void)> func) {
 
 
 int main() {
-    // Timeit(tokenizeTest);
     std::vector<std::string> texts{
         "เมืองร้อยเอ็ด, ร้อยเอ็ด, Thailand",
-//        "名古屋栄１丁目営業所（名古屋栄１丁目）, JPN, Japan",
-//        "日野営業所（日野旭丘）, JPN, Japan",
-//        "世羅営業所（世羅）, JPN, Japan",
-//        "KOTO-KU, TOKYO, JP, Japan",
-//        "福井鯖江営業所（鯖江水落）, JPN, Japan",
-//        "小矢部営業所（小矢部）, JPN, Japan",
-//        "เมืองสุรินทร์, สุรินทร์, Thailand",
-//        "หนองไผ่, เพชรบูรณ์, Thailand",
-//        "เมืองร้อยเอ็ด, ร้อยเอ็ด, Thailand",
-//        "หันคา, ชัยนาท, Thailand",
-//        "เมืองหนองบัวลำภู, หนองบัวลำภู, Thailand",
-//        "동부산지점, Korea, Republic Of",
-//        "제주구제주",
-//        "제주신서부",
-//        "남세종",
-//        "부산연제거제2동",
-//        "OPPIDO MAMERTINA, 89014, IT, Italy",
-//        "Göödnight",
-//        "江苏省苏州市吴江区吴江经济技术开发区柳胥路100号, China",
-//        "广东省惠州市惠城区陈江镇吉祥街22号, China",
+        "名古屋栄１丁目営業所（名古屋栄１丁目）, JPN, Japan",
+        "日野営業所（日野旭丘）, JPN, Japan",
+        "世羅営業所（世羅）, JPN, Japan",
+        "KOTO-KU, TOKYO, JP, Japan",
+        "福井鯖江営業所（鯖江水落）, JPN, Japan",
+        "小矢部営業所（小矢部）, JPN, Japan",
+        "เมืองสุรินทร์, สุรินทร์, Thailand",
+        "หนองไผ่, เพชรบูรณ์, Thailand",
+        "เมืองร้อยเอ็ด, ร้อยเอ็ด, Thailand",
+        "หันคา, ชัยนาท, Thailand",
+        "เมืองหนองบัวลำภู, หนองบัวลำภู, Thailand",
+        "동부산지점, Korea, Republic Of",
+        "제주구제주",
+        "제주신서부",
+        "남세종",
+        "부산연제거제2동",
+        "OPPIDO MAMERTINA, 89014, IT, Italy",
+        "Göödnight",
+        "江苏省苏州市吴江区吴江经济技术开发区柳胥路100号, China",
+        "广东省惠州市惠城区陈江镇吉祥街22号, China",
     };
 
     for (auto text: texts) {
@@ -97,10 +92,10 @@ int main() {
         tokenizeTest(text);
         std::cout << "\n\n\n";
     }
-//    std::string s("เมืองสุรินทร์, สุรินทร์, Thailand");
-//    tokenizeTest(s);
+
     return 0;
 }
+
 
 
 
